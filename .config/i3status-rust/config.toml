@@ -1,0 +1,63 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+
+[[block]]
+block = "pacman"
+interval = 120
+format = "{pacman} updates available"
+format_singular = "{pacman} update available"
+format_up_to_date = "system up to date"
+warning_updates_regex = "(linux |linux-lts|linux-zen)"
+critical_updates_regex = "(zfs |zfs-lts)"
+aur_command = "pikaur -Qua"
+
+#[[block]]
+#block = "net"
+#device = "enp4s0"
+#format = "{speed_down} {speed_up}"
+#interval = 1
+#use_bits = false
+
+#[[block]]
+#block = "custom"
+#command = "curl -s 'wttr.in?format=%C+%t'"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "used"
+unit = "GB"
+interval = 20
+warning = 200.0
+alert = 215.0
+format = "{icon}{used} {unit}"
+
+[[block]]
+block = "memory"
+inerval = 1
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{frequency}"
+
+#[[block]]
+#block = "load"
+#interval = 1
+#format = "{1m}"
+
+#[[block]]
+#block = "sound"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a, %d %b at %R"
+
+#[[block]]
+#block = "backlight"

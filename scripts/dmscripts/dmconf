@@ -1,0 +1,52 @@
+#!/bin/sh
+
+DMEDITOR="kitty nvim"
+
+# An array of options to choose.
+# You can edit this list to add/remove config files.
+declare -a options=(
+"alacritty - $HOME/.config/alacritty/alacritty.yml"
+"bash - $HOME/.bashrc"
+"bspwm - $HOME/.config/bspwm/bspwmrc"
+"dunst - $HOME/.config/dunst/dunstrc"
+"fish - $HOME/.config/fish/config.fish"
+"picom - $HOME/.config/picom/picom.conf"
+"polybar - $HOME/.config/polybar/config"
+"sxhkd - $HOME/.config/sxhkd/sxhkdrc"
+"vim - $HOME/.vimrc"
+"xresources - $HOME/.Xresources"
+"newsboat - $HOME/.config/newsboat/config"
+"rofi - $HOME/.config/rofi/config.rasi"
+"ranger - $HOME/.config/ranger/rc.conf"
+"aria2 - $HOME/.config/aria2/aria2.conf"
+"neofetch - $HOME/.config/neofetch/config.conf"
+"leftwm - $HOME/.config/leftwm/conf.toml"
+"mpv - $HOME/.config/mpv/mpv.conf"
+"cava - $HOME/.config/cava/config"
+"dunst - $HOME/.config/dunst/dunstrc"
+"kitty - $HOME/.config/kitty/kitty.conf"
+"zsh - $HOME/.zshrc"
+"i3 - $HOME/.config/i3/config"
+"nvim - $HOME/.config/nvim/init.vim"
+"bookmark - $HOME/scripts/dmscripts/dmbookmark"
+
+"quit"
+)
+
+# Piping the above array into dmenu.
+# We use "printf '%s\n'" to format the array one item to a line.
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Edit config:')
+
+# What to do when/if we choose 'quit'.
+if [[ "$choice" == "quit" ]]; then
+    echo "Program terminated." && exit 0
+
+# What to do when/if we choose a file to edit.
+elif [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+	$DMEDITOR "$cfg"
+
+# What to do if we just escape without choosing anything.
+else
+    echo "Program terminated." && exit 0
+fi

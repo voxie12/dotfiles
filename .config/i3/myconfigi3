@@ -1,0 +1,188 @@
+#  _ _____
+# (_)___ /
+# | | |_ \
+# | |___) |
+# |_|____/
+#
+#
+#
+#
+# Mod  = Left Click 
+# Mod1 = Alt
+# Mod4 = Super
+
+# Mod4=super Mod1=alt
+set $mod Mod4
+
+# move a floating window with mouse
+floating_modifier $mod
+
+# setting your favourite terminal
+set $myTerm alacritty
+
+# font
+font pango:mononoki Nerd Font 10
+
+# control the sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer
+bindsym XF86AudioMute exec --no-startup-id pamixer
+#bindsym XF86AudioMicMute exec --no-startup-id pamixer
+
+# opening Terminal
+bindsym $mod+Return exec $myTerm
+
+# Kill focused window
+bindsym $mod+q kill
+
+# killall with shift buttom
+bindsym $mod+Shift+q
+
+# Launcher 
+bindsym $mod+space exec --no-startup-id dmenu_run
+
+# Jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# Save and restore the window layout
+bindsym $mod+g exec ~/load_layout.sh
+
+# screenshot
+bindsym --release $mod+z exec scrot -s 
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# split in horizontal orientation
+bindsym $mod+semicolon split h 
+bindsym $mod+k split v
+
+# fullscreen mode toggle
+bindsym $mod+f fullscreen toggle
+
+#toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space mode_toggle
+
+# reload config file
+bindsym $mod+r reload
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# quit i3
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-mesg exit'"
+
+# toggle hidden bar 
+bindsym F1 bar mode toggle
+
+# disable window title
+for_window [class=".*"] border pixel 2
+
+# u know what is gap
+gaps inner 10
+
+# Workspace variables
+set $WS1 term
+set $WS2 web
+set $WS3 misc
+set $WS4 media
+set $WS5 code
+
+# swap the display workspace
+bindsym $mod+1          workspace $WS1
+bindsym $mod+2          workspace $WS2
+bindsym $mod+3          workspace $WS3
+bindsym $mod+4          workspace $WS4
+bindsym $mod+5          workspace $WS5
+
+# move window to another workspace 
+bindsym $mod+Shift+1    move container to workspace $WS1
+bindsym $mod+Shift+2    move container to workspace $WS2
+bindsym $mod+Shift+3    move container to workspace $WS3
+bindsym $mod+Shift+4    move container to workspace $WS4
+bindsym $mod+Shift+5    move container to workspace $WS5
+
+# resize window
+mode "resize" {
+	
+	# bindings trigger as soon as you enter the resize mode
+	bindsym j         resize grow   width  5 px or 5 ppt
+	bindsym k         resize shrink height 5 px or 5 ppt
+	bindsym l         resize grow   height 5 px or 5 ppt
+	bindsym semicolon resize shrink width  5 px or 5 ppt
+
+	# back to normal
+	bindsym Escape mode "default"
+}
+
+# colors of the borders
+
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+bar {
+	font pango:mononoki Nerd Font, Font Awesome 5 Free 10
+	#separator_symbol " ~ "
+	position top
+	tray_output none
+	#status_command i3status
+	status_command i3status-rs /home/jay/.config/i3status-rust/config.toml
+	colors {
+		background #282A36
+		statusline #F8F8F2
+		separator  #44475A
+
+
+    		focused_workspace  #44475A #44475A #F8F8F2
+    		active_workspace   #282A36 #44475A #F8F8F2
+    		inactive_workspace #282A36 #282A36 #BFBFBF
+    		urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    		binding_mode       #FF5555 #FF5555 #F8F8F2
+		
+}
+
+# Windows Rules
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [title="mpv"] floating enable
+for_window [title="feh"] floating enable
+for_window [title="sxiv"] floating enable
+for_window [class="alacritty"] move container to workspace $WS1
+for_window [class="brave"] move container to workspace $WS2
+
+# autostart
+
+# autotiling
+exec_always --no-startup-id autotiling
+
+# set your keyboard language
+#exec_always setxkbmap us
+
+# autorepeat
+exec xset r rate 360 60
+
+# network manger applet for tray
+exec --no-startup-id nm-applet
+
+# set wallpaper
+#exec_always xwallpaper --maximize /home/jay/Downloads/wallhaven-722w5o.jpg
+exec_always --no-startup-id exec feh --bg-scale --randomize ~/Pictures/Desktop/Wallpapers/*.png
+
