@@ -14,6 +14,8 @@ export DOTBARE_DIR="$HOME/.cfg"
 export DOTBARE_TREE="$HOME"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="nvim -c 'set ft=man' -"
+export MANWIDTH=90
 
 export ZSH="/home/jay/.oh-my-zsh"
 
