@@ -1,5 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
 # startx
 if [ "$(tty)" = "/dev/tty1" ]
 then
@@ -12,6 +13,7 @@ perl $HOME/fm6000 -o arch --not_de -d bspwm -c cyan
 export TERM="xterm-256color"                      
 export EDITOR="nvim"
 export VISUAL="nvim"
+export LANG=en_GB.UTF-8
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #export MANPAGER="nvim -c 'set ft=man' -"
@@ -27,8 +29,6 @@ plugins=(
         )
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
-
-export LANG=en_GB.UTF-8
 
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
