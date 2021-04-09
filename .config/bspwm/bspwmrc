@@ -5,7 +5,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 xsetroot -cursor_name left_ptr &
 #xset r rate 360 60 -b -dpms &
 xset r rate 360 60 &
-feh --bg-max --randomize ~/Wallpapers/* &
+#feh --bg-max --randomize ~/Wallpapers/* &
+xwallpaper --center /home/jay/Pictures/wallpapers/1.png
 lxsession &
 $HOME/.config/polybar/launch.sh
 picom -b &
