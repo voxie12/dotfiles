@@ -7,14 +7,17 @@ then
     pgrep bspwm || startx
 fi
 
+if [ -d "$HOME/.local/bin" ]
+then PATH="$HOME/.local/bin:$PATH"
+fi
+
 ###AUTOSTART###
-perl $HOME/fm6000 -o arch --not_de -d bspwm -c cyan
+fm6000 -o arch --not_de -d bspwm -c cyan
 
 export TERM="xterm-256color"                      
 export EDITOR="nvim"
 export VISUAL="nvim"
 export LANG=en_GB.UTF-8
-
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #export MANPAGER="nvim -c 'set ft=man' -"
 export MANWIDTH=90
@@ -115,6 +118,7 @@ alias poweroff='doas poweroff'
 alias reboot='doas reboot'
 alias killred='killall redshift'
 alias homeserver='ssh pi@192.168.0.39'
+alias szsh='source $HOME/.zshrc'
 
 
 eval "$(starship init zsh)"
