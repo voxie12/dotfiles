@@ -1,4 +1,3 @@
 # dotfiles
 
-[[https://gitlab.com/dwt1/dotfiles/-/raw/master/.screenshots/dotfiles09-thumb.png]]
-
+![screenshot](https://github.com/Who23/dots/blob/master/ex_shots/pink%20up.png)
