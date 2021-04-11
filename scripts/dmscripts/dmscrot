@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 
 # Set with the flags "-e", "-u","-o pipefail" cause the script to fail

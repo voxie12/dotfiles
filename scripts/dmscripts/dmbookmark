@@ -105,6 +105,8 @@ declare -a options=(
 "googledrive - https://drive.google.com/drive/my-drive"
 "forbes - https://www.forbes.com/"
 "notion - https://www.notion.so/"
+"artixlinux - https://artixlinux.org/"
+"voidlinux - https://voidlinux.org/"
 
 "quit"
 )
