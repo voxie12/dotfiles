@@ -163,7 +163,7 @@ label-occupied = %name%
 label-occupied-foreground = ${colors.blue}
 label-occupied-padding = 1
 
-label-urgent = >%name%<
+label-urgent = %name%!
 label-urgent-background = ${colors.blue}
 label-urgent-padding = 1
 

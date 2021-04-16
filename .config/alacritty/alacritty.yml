@@ -107,12 +107,13 @@ font:
     # The `style` can be specified to pick a specific face.
     style: Regular
     # Bold font face
-    #bold:
+    bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: SauceCodePro Nerd Font
+    family: mononoki Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack

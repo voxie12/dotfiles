@@ -11,6 +11,14 @@ if [ -d "$HOME/.local/bin" ]
 then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/go/bin" ]
+then PATH="$HOME/go/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo/bin" ]
+then PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 ###AUTOSTART###
 fm6000 -o arch --not_de -d bspwm -c cyan
 
@@ -30,7 +38,10 @@ plugins=(
         zsh-autosuggestions
         history-substring-search
         )
-autoload -U compinit && compinit
+
+autoload -Uz compinit && compinit
+kitty + complete setup zsh | source /dev/stdin
+
 source $ZSH/oh-my-zsh.sh
 
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
@@ -114,11 +125,14 @@ alias nf='neofetch'
 alias nfoff='neofetch --off'
 alias battery='acpi'
 alias plaza='mpv https://radio.plaza.one/mp3'
+alias lofi='mpv https://youtu.be/5qap5aO4i9A'
 alias poweroff='doas poweroff'
 alias reboot='doas reboot'
 alias killred='killall redshift'
 alias homeserver='ssh pi@192.168.0.39'
 alias szsh='source $HOME/.zshrc'
-
+alias du='du -sh'
+alias icat="kitty +kitten icat"
+alias p='paru'
 
 eval "$(starship init zsh)"

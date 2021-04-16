@@ -5,7 +5,7 @@ BROWSER="brave"
 declare -a options=(
 
 "google - https://google.co.uk"
-"youtube - https://youtube.co.uk"
+"youtube - https://youtube.com"
 "duckduckgo - https://duckduckgo.com"
 "reddit - https://reddit.com"
 "unixporn - https://reddit.com/r/unixporn"
@@ -103,10 +103,12 @@ declare -a options=(
 "linux mint - https://linuxmint.com/"
 "darksky - https://darksky.net"
 "googledrive - https://drive.google.com/drive/my-drive"
+"gmail - mail.google.com"
 "forbes - https://www.forbes.com/"
 "notion - https://www.notion.so/"
 "artixlinux - https://artixlinux.org/"
 "voidlinux - https://voidlinux.org/"
+"googlephoto - https://photos.google.com"
 
 "quit"
 )
