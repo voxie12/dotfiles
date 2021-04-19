@@ -101,11 +101,12 @@ format-prefix-foreground = #5b
 
 [module/weather]
 type = custom/script
-exec = curl -s 'wttr.in?format=%C+%t'
+;exec = curl -s 'wttr.in?format=%C+%t'
+exec = curl -s 'wttr.in?format=1'
 exec-if = ping wttr.in -c 1
 interal = 600
-format-prefix = "摒  "
-format-prefix-foreground = ${colors.blue}
+;format-prefix = "摒  "
+;format-prefix-foreground = ${colors.blue}
 
 [module/cpu_clock]
 type = custom/script

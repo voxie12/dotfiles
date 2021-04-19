@@ -7,6 +7,7 @@ then
     pgrep bspwm || startx
 fi
 
+# path
 if [ -d "$HOME/.local/bin" ]
 then PATH="$HOME/.local/bin:$PATH"
 fi
@@ -19,9 +20,10 @@ if [ -d "$HOME/.cargo/bin" ]
 then PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-###AUTOSTART###
+# first command when you open up terminal
 fm6000 -o arch --not_de -d bspwm -c cyan
 
+# my export
 export TERM="xterm-256color"                      
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -30,6 +32,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #export MANPAGER="nvim -c 'set ft=man' -"
 export MANWIDTH=90
 
+# oh my zsh sucks
 export ZSH="/home/jay/.oh-my-zsh"
 
 plugins=(
@@ -39,15 +42,16 @@ plugins=(
         history-substring-search
         )
 
+source $ZSH/oh-my-zsh.sh
+
+# completions
 autoload -Uz compinit && compinit
 kitty + complete setup zsh | source /dev/stdin
 
-source $ZSH/oh-my-zsh.sh
-
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-
+# like vim
 bindkey -v
 
+# extract
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
@@ -90,7 +94,7 @@ fi
 
 IFS=$SAVEIFS
 
-
+# alias
 alias sudo="doas --"
 alias vim="nvim"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -134,5 +138,7 @@ alias szsh='source $HOME/.zshrc'
 alias du='du -sh'
 alias icat="kitty +kitten icat"
 alias p='paru'
+alias x='startx'
 
+# prompt
 eval "$(starship init zsh)"

@@ -35,7 +35,7 @@ super + j
 	brave
 
 super + shift + equal
-	sxiv -rt $HOME/Wallpapers/*
+	sxiv -rt ~/Pictures
 
 #
 # bspwm hotkeys
