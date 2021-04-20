@@ -56,7 +56,7 @@ font-5 = Noto Sans CJK JP:antialias=tru:size=10;2
 
 modules-left = bspwm
 modules-center = date 
-modules-right = download upload ping weather filesystem temperature checkupdates memory cpu_clock
+modules-right = kernel download upload ping weather filesystem temperature checkupdates memory cpu_clock
 
 ;tray-position = right
 ;tray-padding = 2
@@ -101,12 +101,23 @@ format-prefix-foreground = #5b
 
 [module/weather]
 type = custom/script
-;exec = curl -s 'wttr.in?format=%C+%t'
-exec = curl -s 'wttr.in?format=1'
+exec = curl -s 'wttr.in?format=%C+%t'
+;exec = curl -s 'wttr.in?format=1'
 exec-if = ping wttr.in -c 1
 interal = 900
-;format-prefix = "摒  "
-;format-prefix-foreground = ${colors.blue}
+format-prefix = "摒  "
+format-prefix-foreground = ${colors.blue}
+
+[module/kernel]
+type = custom/script
+exec = uname -r
+interal = 9999
+format-prefix = "  "
+;
+;
+format-prefix-foreground = ${colors.blue}
+
+
 
 [module/cpu_clock]
 type = custom/script

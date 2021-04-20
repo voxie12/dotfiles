@@ -21,10 +21,12 @@ then PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # first command when you open up terminal
-fm6000 -o arch --not_de -d bspwm -c cyan
+#neofetch
+#fm6000 -o arch --not_de -d bspwm -c cyan
+bunnyfetch
 
 # my export
-export TERM="xterm-256color"                      
+#export TERM="xterm-256color"                      
 export EDITOR="nvim"
 export VISUAL="nvim"
 export LANG=en_GB.UTF-8
