@@ -94,8 +94,8 @@ label = "%output:6:8%"
 [module/bat]
 type = custom/script
 exec = echo $(cat /sys/class/power_supply/BAT1/capacity)%
-exec-if = ping wttr.in -c 1
-interal = 600
+exec-if = which echo
+interal = 60
 format-prefix = "BAT: "
 format-prefix-foreground = #5b
 
@@ -104,7 +104,7 @@ type = custom/script
 ;exec = curl -s 'wttr.in?format=%C+%t'
 exec = curl -s 'wttr.in?format=1'
 exec-if = ping wttr.in -c 1
-interal = 600
+interal = 900
 ;format-prefix = "摒  "
 ;format-prefix-foreground = ${colors.blue}
 

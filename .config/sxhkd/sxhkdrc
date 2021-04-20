@@ -140,23 +140,14 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + alt + 1
-	bash ~/scripts/dmscripts/dmsearch
+	bash ~/scripts/dmscripts/dmconf2
 
 super + alt + 2
-	bash ~/scripts/dmscripts/dmconf
+	bash ~/scripts/dmscripts/dmsearch
 
 super + alt + 3
-	bash ~/scripts/dmscripts/dmkill
-
-super + alt + 4
-	bash ~/scripts/dmscripts/dmlogout
-
-super + alt + 5
 	bash ~/scripts/dmscripts/dmscrot
 
-super + alt + 6
-	bash ~/scripts/dmscripts/dman
-
-super + alt + 7
+super + alt + 4
     bash ~/scripts/dmscripts/dmbookmark
 
