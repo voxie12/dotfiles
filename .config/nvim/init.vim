@@ -17,6 +17,8 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 let mapleader = " "
