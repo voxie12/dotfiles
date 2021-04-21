@@ -16,6 +16,7 @@ unclutter -idle 2 &
 #redshift -O3500
 xset s off &
 #pgrep bspswallow || bspswallow &
+/usr/bin/emacs --daemon &
 
 
 bspc monitor -d 一 二 三 四 五 六 七 八 九 十

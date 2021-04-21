@@ -2,6 +2,9 @@
 # wm independent hotkeys
 #
 
+ctrl + shift + e
+	emacsclient -c -a emacs
+
 super + y
     ytfzf -fD
 
