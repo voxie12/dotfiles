@@ -29,8 +29,7 @@ bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config borderless_monocle      true
 bspc config focus_follows_pointer   true
-bspc config top_padding		        30
-bspc config click_to_focus          none
+bspc config top_padding             30
 
 ### colors border ###
 bspc config normal_border_color     "#928374"
@@ -44,6 +43,9 @@ bspc rule -a feh            state=floating center=on
 bspc rule -a Sxiv           state=floating center=on
 bspc rule -a mpv            state=floating center=on sticky=on
 bspc rule -a Lxappearance   state=floating center=on
+
+
+bspc rule -a Emacs   state=tiled
 
 # 1
 bspc rule -a kitty              desktop='^1' focus=on follow=on
