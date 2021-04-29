@@ -1,24 +1,29 @@
-! Base colors
-*.foreground:  #E1E1E1
-*.background:  #1c2023
-*.cursorColor: #778899
+!! Appearance
+visualBell: true
+xterm*faceName: Iosevka Nerd Font
+xterm*faceSize: 9
 
-*.color0:  #1c2023
-*.color1:  #bf616a
-*.color2:  #a3be8c
-*.color3:  #ebcb8b
-*.color4:  #8fa1b3
-*.color5:  #b48ead
-*.color6:  #96b5b4
-*.color7:  #E1E1E1
-*.color8:  #919ba0
-*.color9:  #bf616a
-*.color10: #a3be8c
-*.color11: #ebcb8b
-*.color12: #8fa1b3
-*.color13: #b48ead
-*.color14: #96b5b4
-*.color15: #c0c5ce
+! Mountain Xresources palette
+*.foreground: #f0f0f0
+*.background: #0f0f0f
+*.color0:     #262626
+*.color8:     #4c4c4c
+*.color1:     #ac8a8c
+*.color9:     #c49ea0
+*.color2:     #8aac8b
+*.color10:    #9ec49f
+*.color3:     #aca98a
+*.color11:    #c4c19e
+*.color4:     #8f8aac
+*.color12:    #a39ec4
+*.color5:     #ac8aac
+*.color13:    #c49ec4
+*.color6:     #8aabac
+*.color14:    #9ec3c4
+*.color7:     #e7e7e7
+*.color15:    #f5f5f5
+
+Xcursor.size: 9
 
 ! Rofi
 rofi.font: monospace 12
@@ -36,7 +41,7 @@ rofi.kb-cancel: Escape,Alt+F1
 ! xterm
 xterm*termName: xterm-256color
 xterm*font: monospace
-xterm*faceName: monospace:size=11
+!xterm*faceName: monospace:size=11
 xterm*loginShell: true
 xterm*vt100*geometry: 90x34
 xterm*saveLines: 2000

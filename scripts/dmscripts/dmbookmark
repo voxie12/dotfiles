@@ -109,6 +109,13 @@ declare -a options=(
 "artixlinux - https://artixlinux.org/"
 "voidlinux - https://voidlinux.org/"
 "googlephoto - https://photos.google.com"
+"googlemaps - https://www.google.com/maps"
+"kernel - https://www.kernel.org"
+"starbucks - https://www.starbucks.co.uk/"
+"habbo - habbo.com"
+"apple - https://www.apple.com/uk/"
+"freebsd - https://www.freebsd.org/"
+"openbsd - https://www.openbsd.org/"
 
 "quit"
 )

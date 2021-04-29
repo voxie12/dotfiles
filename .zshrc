@@ -1,28 +1,28 @@
+# first command when you open up terminal
+#neofetch
+#fm6000 -o arch --not_de -d bspwm -c cyan
+bunnyfetch
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ "$(tty)" = "/dev/tty1" ]
-then
-    pgrep bspwm || startx
-fi
+export PROMPT='%F{red}%B*%b%f '
 
 # history
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.cache/zsh/history
 
-# first command when you open up terminal
-#neofetch
-#fm6000 -o arch --not_de -d bspwm -c cyan
-bunnyfetch
-
 # completions
+zmodload zsh/complist
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+_comp_options+=(globdots)
+
 kitty + complete setup zsh | source /dev/stdin
 
-# u dont need to type 'cmd' anymore
+# u dont need to type 'cd' anymore
 setopt auto_cd
 
 # source
@@ -33,13 +33,19 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 # like vim
 bindkey -v
 
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect '^h' vi-backward-char
+
 # alias
 alias sudo="doas --"
 alias vim="nvim"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias ls='exa --icons --group-directories-first'
+alias la='exa -a --icons --group-directories-first'
+alias ll='exa -al --icons --group-directories-first'
+alias lt='exa -a --icons --tree --group-directories-first'
 alias l.='exa -a | egrep "^\."'
 alias y='paru -Syu --noconfirm'
 alias remove='paru -Rds'
@@ -80,6 +86,9 @@ alias p='paru'
 alias x='startx'
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
+alias rain='curl v2d.wttr.in/London'
+alias thisatsu='https://www.twitch.tv/thisatsu3'
+alias fuckssh='rm -rf ~/.ssh'
 
 # prompt
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"

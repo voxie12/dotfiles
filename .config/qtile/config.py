@@ -1,25 +1,42 @@
-#  ___  _   _ _      
-# / _ \| |_(_) | ___ 
-#| | | | __| | |/ _ \
-#| |_| | |_| | |  __/
-# \__\_\\__|_|_|\___|
-
-from libqtile import bar, layout, widget
+# -*- coding: utf-8 -*-
+import os
+import re
+import socket
+import subprocess
+from libqtile import qtile
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
-from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+from libqtile.command import lazy
+from typing import List  # noqa: F401
 
 mod = "mod4"
-terminal = "alacritty"
+term = "alacritty"
 
 keys = [
+    Key([mod], "Return", 
+        lazy.spawn(term), 
+        desc="Launch terminal"),
+    
     # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    Key([mod], "h", 
+        lazy.layout.left(), 
+        desc="Move focus to left"),
+    
+    Key([mod], "l", 
+        lazy.layout.right(), 
+        desc="Move focus to right"),
+    
+    Key([mod], "j", 
+        lazy.layout.down(), 
+        desc="Move focus down"),
+    
+    Key([mod], "k", 
+        lazy.layout.up(), 
+        desc="Move focus up"),
+    
+    Key([mod], "space", 
+        lazy.spawn("dmenu_run"),
+        desc="Launcher"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -48,7 +65,6 @@ keys = [
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
