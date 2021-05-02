@@ -6,15 +6,18 @@ bunnyfetch
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+autoload -U colors && colors
 export PROMPT='%F{red}%B*%b%f '
 
+# u dont need to type "cd" anymore
+setopt auto_cd
+
 # history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # completions
-zmodload zsh/complist
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -23,21 +26,24 @@ _comp_options+=(globdots)
 kitty + complete setup zsh | source /dev/stdin
 
 # u dont need to type 'cd' anymore
-setopt auto_cd
 
 # source
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
 
 # like vim
+KEYTIMEOUT=1
 bindkey -v
 
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M menuselect '^h' vi-backward-char
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^E' end-of-line
+bindkey '^A' beginning-of-line
+bindkey '^R' history-incremental-pattern-search-backward
+
+# source
+source /home/jay/git/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 # alias
 alias sudo="doas --"
@@ -87,7 +93,7 @@ alias x='startx'
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 alias rain='curl v2d.wttr.in/London'
-alias thisatsu='https://www.twitch.tv/thisatsu3'
+alias thisatsu='mpv https://www.twitch.tv/thisatsu3'
 alias fuckssh='rm -rf ~/.ssh'
 
 # prompt

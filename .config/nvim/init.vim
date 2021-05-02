@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'bling/vim-airline'
+"Plug 'bling/vim-airline'
 
 Plug 'PotatoesMaster/i3-vim-syntax'
 
@@ -8,7 +8,7 @@ Plug 'kovetskiy/sxhkd-vim'
 
 Plug 'rust-lang/rust.vim'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'norcalli/nvim-colorizer.lua'
 
@@ -64,7 +64,7 @@ set noshowmode
 
 set showcmd
 set pumheight=10
-set showmode
+"set showmode
 
 filetype plugin on
 syntax on
@@ -100,7 +100,11 @@ set laststatus=2
 " for colorizer
 set termguicolors
 lua require'colorizer'.setup()
+
+" colorscheme
 colorscheme gruvbox
+" set background=dark
+
 
 set number relativenumber
 set noswapfile
@@ -132,3 +136,5 @@ noremap ; l
 
 :imap ii <Esc>
 :imap CapsLock <Esc>
+
+source $HOME/.config/nvim/configs/mappings.vim

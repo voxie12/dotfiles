@@ -65,7 +65,7 @@ declare -a options=(
 "anime planet - https://www.anime-planet.com/"
 "myanimelist - https://myanimelist.net/"
 "anichart - https://anichart.net/"
-"anilist - https://anilist.co/"
+"anilist - https://anilist.co/home"
 "userbenchmark - https://www.userbenchmark.com/"
 "xda - https://www.xda-developers.com/"
 "lineageos - https://lineageos.org/"
@@ -116,6 +116,8 @@ declare -a options=(
 "apple - https://www.apple.com/uk/"
 "freebsd - https://www.freebsd.org/"
 "openbsd - https://www.openbsd.org/"
+"kitsu - https://kitsu.io/"
+"shanaproject - http://alt.shanaproject.com/"
 
 "quit"
 )

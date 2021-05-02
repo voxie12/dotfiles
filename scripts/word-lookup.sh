@@ -1,6 +1,6 @@
 word=$(xclip -o)
 twm &
-res=$(curl -s "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
+res=$(curl -s "https://api.dictionaryapi.dev/api/v2/entries/en_GB/$word")
 regex=$'"definition":"\K(.*?)(?=")'
 definitions=$(echo $res | grep -Po "$regex")
 separatedDefinition=$(sed ':a;N;$!ba;s/\n/\n\n/g' <<< "$definitions")
