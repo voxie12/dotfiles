@@ -136,5 +136,3 @@ noremap ; l
 
 :imap ii <Esc>
 :imap CapsLock <Esc>
-
-source $HOME/.config/nvim/configs/mappings.vim

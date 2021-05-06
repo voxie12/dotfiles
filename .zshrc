@@ -43,7 +43,7 @@ bindkey '^A' beginning-of-line
 bindkey '^R' history-incremental-pattern-search-backward
 
 # source
-source /home/jay/git/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source ~/git/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 # alias
 alias sudo="doas --"
