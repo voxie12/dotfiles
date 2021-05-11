@@ -1,7 +1,7 @@
 !! Appearance
 visualBell: true
-xterm*faceName: Iosevka Nerd Font
-xterm*faceSize: 9
+*.faceName: Iosevka Nerd Font
+*.faceSize: 11
 
 ! Mountain Xresources palette
 *.foreground: #f0f0f0

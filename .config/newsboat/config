@@ -7,10 +7,10 @@ reload-threads 100
 bind-key j down
 bind-key k up
 
-browser "brave %u"
+browser "firefox %u"
 #macro t set browser "mpv %u" ; open-in-browser ; set browser "brave %u"
 #macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
-macro v set browser "setsid -f mpv --really-quiet --no-terminal" ; open-in-browser ; set browser brave
+macro v set browser "setsid -f mpv --really-quiet --no-terminal" ; open-in-browser ; set browser firefox
 
 highlight feedlist "---.*---" red default bold
 highlight feedlist ".*0/0.." default default invis

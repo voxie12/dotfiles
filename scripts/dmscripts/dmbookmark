@@ -1,6 +1,6 @@
 #! /bin/bash
 
-BROWSER="brave"
+BROWSER="firefox"
 
 declare -a options=(
 

@@ -56,7 +56,7 @@ font-5 = Noto Sans CJK JP:antialias=tru:size=10;2
 
 modules-left = bspwm
 modules-center = date 
-modules-right = kernel download upload ping weather filesystem temperature checkupdates memory cpu_clock
+modules-right = download upload ping weather filesystem temperature checkupdates memory cpu_clock
 
 ;tray-position = right
 ;tray-padding = 2

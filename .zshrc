@@ -1,7 +1,9 @@
 # first command when you open up terminal
 #neofetch
-#fm6000 -o arch --not_de -d bspwm -c cyan
-bunnyfetch
+#fm6000 -r -o arch -n -de bspwm -c random
+#bunnyfetch
+#jfetch
+yafetch
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -32,7 +34,7 @@ kitty + complete setup zsh | source /dev/stdin
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 #source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
 
-# like vim
+# like vim bindkey
 KEYTIMEOUT=1
 bindkey -v
 
@@ -88,7 +90,6 @@ alias homeserver='ssh pi@192.168.0.39'
 alias szsh='source $HOME/.zshrc'
 alias du='du -sh'
 alias icat="kitty +kitten icat"
-alias p='paru'
 alias x='startx'
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"

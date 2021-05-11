@@ -35,7 +35,7 @@ super + shift + d
 	bash /home/jay/scripts/word-lookup.sh
 
 super + j
-	brave
+	firefox
 
 super + shift + equal
 	sxiv -rt ~/Pictures
@@ -143,14 +143,16 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + alt + 1
-	bash ~/scripts/dmscripts/dmconf2
+    bash ~/git/dmscripts/scripts/dmconf
 
 super + alt + 2
-	bash ~/scripts/dmscripts/dmsearch
+    bash ~/git/dmscripts/scripts/dmsearch
 
 super + alt + 3
-	bash ~/scripts/dmscripts/dmscrot
+    bash ~/git/dmscripts/scripts/dmscrot
 
 super + alt + 4
-    bash ~/scripts/dmscripts/dmbookmark
+    bash ~/scripts/dmbookmark
 
+super + alt + 0
+    bash ~/git/dmscripts/scripts/dmhub
