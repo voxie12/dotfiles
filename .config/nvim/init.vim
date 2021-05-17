@@ -25,6 +25,10 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+Plug 'itchyny/lightline.vim'
+
+Plug 'n1ghtmare/noirblaze-vim'
+
 call plug#end()
 
 
@@ -67,7 +71,7 @@ set pumheight=10
 "set showmode
 
 filetype plugin on
-syntax on
+syntax enable
 
 set nowrap
 set ruler
@@ -105,6 +109,8 @@ lua require'colorizer'.setup()
 colorscheme gruvbox
 " set background=dark
 
+" status bar
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 set number relativenumber
 set noswapfile
