@@ -8,7 +8,7 @@ Plug 'kovetskiy/sxhkd-vim'
 
 Plug 'rust-lang/rust.vim'
 
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'norcalli/nvim-colorizer.lua'
 
@@ -142,3 +142,5 @@ noremap ; l
 
 :imap ii <Esc>
 :imap CapsLock <Esc>
+
+map <F5> :setlocal spell! spelllang=en_GB<CR>

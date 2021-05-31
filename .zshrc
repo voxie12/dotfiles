@@ -97,5 +97,6 @@ alias rain='curl v2d.wttr.in/London'
 alias thisatsu='mpv https://www.twitch.tv/thisatsu3'
 alias fuckssh='rm -rf ~/.ssh'
 
+
 # prompt
 #eval "$(starship init zsh)"

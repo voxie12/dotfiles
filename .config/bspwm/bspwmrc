@@ -14,7 +14,7 @@ picom -b &
 dunst &
 unclutter -idle 2 &
 #redshift -O3500
-xset s off &
+#xset s off &
 #pgrep bspswallow || bspswallow &
 /usr/bin/emacs --daemon &
 
