@@ -38,7 +38,7 @@ super + j
 	firefox
 
 super + shift + equal
-	sxiv -rt ~/Pictures
+	sxiv -t ~/pictures/wallpapers
 
 #
 # bspwm hotkeys

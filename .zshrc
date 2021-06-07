@@ -25,9 +25,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 _comp_options+=(globdots)
 
-kitty + complete setup zsh | source /dev/stdin
-
-# u dont need to type 'cd' anymore
+#kitty + complete setup zsh | source /dev/stdin
 
 # source
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
@@ -50,6 +48,7 @@ source ~/git/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev
 # alias
 alias sudo="doas --"
 alias vim="nvim"
+alias v="nvim"
 alias ls='exa --icons --group-directories-first'
 alias la='exa -a --icons --group-directories-first'
 alias ll='exa -al --icons --group-directories-first'
@@ -64,16 +63,14 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-alias df='df -h'                          # human-readable sizes
-alias free='free -mt'                      # show sizes in MB
-alias merge='xrdb -merge ~/.Xresources'   # merge xresources
-alias jctl="journalctl -p 3 -xb"          # get error messages from journalctl
+alias df='df -h'
+alias free='free -mt'
+alias merge='xrdb -merge ~/.Xresources'
+alias jctl="journalctl -p 3 -xb"
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-alias yta-best="youtube-dl --extract-audio --audio-format best "
-alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
-alias yta-opus="youtube-dl --extract-audio --audio-format opus "
-alias ytv-best="youtube-dl -f bestvideo+bestaudio "
-alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
+alias yta='youtube-dl --output "%(title)s.%(ext)s"'
+alias yta-mp3='youtube-dl --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"'
+alias ytv-best='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
 alias tb="nc termbin.com 9999"
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias r='ranger'
@@ -96,7 +93,7 @@ alias emacs="emacsclient -c -a 'emacs'"
 alias rain='curl v2d.wttr.in/London'
 alias thisatsu='mpv https://www.twitch.tv/thisatsu3'
 alias fuckssh='rm -rf ~/.ssh'
-
+alias porn='mpv https://pornhub.com/random'
 
 # prompt
 #eval "$(starship init zsh)"

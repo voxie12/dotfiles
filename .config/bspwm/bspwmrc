@@ -6,10 +6,10 @@ xsetroot -cursor_name left_ptr &
 #xset r rate 360 60 -b -dpms &
 xset r rate 350 60 &
 #feh --bg-max --randomize ~/Wallpapers/* &
-xwallpaper --maximize /home/jay/pictures/shop.png
+xwallpaper --maximize $HOME/pictures/wallpapers/wallhaven-l3zmwy.jpg
 lxsession &
 $HOME/.config/polybar/launch.sh
-picom -b &
+picom --experimental-backends &
 #nm-applet &
 dunst &
 unclutter -idle 2 &
@@ -17,7 +17,6 @@ unclutter -idle 2 &
 #xset s off &
 #pgrep bspswallow || bspswallow &
 /usr/bin/emacs --daemon &
-
 
 bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 #bspc monitor -d I II III IV V VI VII VIII IX X

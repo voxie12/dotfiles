@@ -28,6 +28,10 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCXGgrKt94gR6lmN4aN3mYTg aus
 https://www.youtube.com/feeds/videos.xml?channel_id=UCRI00CwLZdLRCWg5BdDOsNw the canadian lad
 https://www.youtube.com/feeds/videos.xml?channel_id=UCzfyYtgvkx5mLy8nlLlayYg Vivziepop
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdC0An4ZPNr_YiFiYoVbwaw Daily Dose Of Internet
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFbzdRvgpZpFiBJ6G0egHVw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCxjnv966UovgaHfaolkNlng
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSMqateX8OA2s1wsOR2EgJA
+
 
 ---News_Tech---
 https://www.omgubuntu.co.uk/feed
@@ -37,23 +41,6 @@ https://9to5google.com/feed/atom
 https://www.androidpolice.com/feed/ "~Android Police"
 https://archlinux.org/feeds/news/
 https://artixlinux.org/feed.php
-
----News---
-http://www.theverge.com/rss/index.xml "~The Verge"
-https://www.polygon.com/rss/index.xml "~Polygon"
-
----Animes---
-https://subsplease.org/rss/?t&r=1080
-http://www.shanaproject.com/feeds/site/
-http://www.shanaproject.com/feeds/user/53678/
-
----Reddit---
-https://www.reddit.com/r/archlinux/new.rss
-https://www.reddit.com/r/linux/new.rss
-https://www.reddit.com/r/bspwm/new.rss
-https://www.reddit.com/r/unixporn/new.rss
-https://www.reddit.com/r/anime/hot.rss
-https://www.reddit.com/r/worldnews/hot.rss
 
 ---LOL---
 "query:Linux Reddit:tags # \"content\" or title =~ \"\\[OC\\]\"" meta
