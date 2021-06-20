@@ -8,7 +8,7 @@ ctrl + shift + e
 super + y
     ytfzf -fD
 
-super + l
+super + z
     betterlockscreen -l dim -t "Dont't touch my machine!"
 
 # hide window
@@ -25,7 +25,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -p "Run: "
+	dmenu_run -c -bw 2 -l 20 -g 4 -p "Run: "
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -34,8 +34,8 @@ super + Escape
 super + shift + d
 	bash /home/jay/scripts/word-lookup.sh
 
-super + j
-	firefox
+ctrl + shift + w
+     firefox
 
 super + shift + equal
 	sxiv -t ~/pictures/wallpapers

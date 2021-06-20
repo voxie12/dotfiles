@@ -9,7 +9,7 @@ yafetch
 [[ $- != *i* ]] && return
 
 autoload -U colors && colors
-export PROMPT='%F{red}%B*%b%f '
+export PROMPT='%F{yellow}%Bᗧ %F{white}... %F{red}%Bᗣ%b%f  '
 
 # u dont need to type "cd" anymore
 setopt auto_cd
@@ -62,7 +62,6 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
-alias rm='rm -i'
 alias df='df -h'
 alias free='free -mt'
 alias merge='xrdb -merge ~/.Xresources'
@@ -87,13 +86,20 @@ alias homeserver='ssh pi@192.168.0.39'
 alias szsh='source $HOME/.zshrc'
 alias du='du -sh'
 alias icat="kitty +kitten icat"
-alias x='startx'
+alias sx='startx'
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 alias rain='curl v2d.wttr.in/London'
 alias thisatsu='mpv https://www.twitch.tv/thisatsu3'
 alias fuckssh='rm -rf ~/.ssh'
 alias porn='mpv https://pornhub.com/random'
+alias fdisk='sudo fdisk -l'
+alias big="expac -H M '%m\t%n' | sort -h | nl"
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+alias x="xplr"
+alias xcd='cd "$(xplr)"'
+alias rm='echo "This is not the command you are looking for."; false'
 
 # prompt
 #eval "$(starship init zsh)"

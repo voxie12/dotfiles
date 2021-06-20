@@ -45,8 +45,7 @@ bspc rule -a feh            state=floating center=on
 bspc rule -a Sxiv           state=floating center=on
 bspc rule -a mpv            state=floating center=on sticky=on
 bspc rule -a Lxappearance   state=floating center=on
-
-#bspc rule -a Emacs   state=tiled
+bspc rule -a Emacs          state=tiled
 
 # 1
 bspc rule -a kitty              desktop='^1' focus=on follow=on
