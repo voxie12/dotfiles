@@ -77,7 +77,6 @@ alias n='nnn'
 alias nf='neofetch'
 alias nfoff='neofetch --off'
 alias battery='acpi'
-alias plaza='mpv https://radio.plaza.one/mp3'
 alias lofi='mpv https://youtu.be/5qap5aO4i9A --no-video'
 alias poweroff='doas poweroff'
 alias reboot='doas reboot'
@@ -97,9 +96,11 @@ alias fdisk='sudo fdisk -l'
 alias big="expac -H M '%m\t%n' | sort -h | nl"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+alias pacdate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
 alias x="xplr"
 alias xcd='cd "$(xplr)"'
 alias rm='echo "This is not the command you are looking for."; false'
+
 
 # prompt
 #eval "$(starship init zsh)"

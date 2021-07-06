@@ -143,16 +143,16 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + alt + 1
-    bash ~/git/dmscripts/scripts/dmconf
+  dm-confedit
 
 super + alt + 2
-    bash ~/git/dmscripts/scripts/dmsearch
+    dm-websearch
 
 super + alt + 3
-    bash ~/git/dmscripts/scripts/dmscrot
+    dm-maim
 
 super + alt + 4
     bash ~/scripts/dmbookmark
 
 super + alt + 0
-    bash ~/git/dmscripts/scripts/dmhub
+    dm-hub
