@@ -8,11 +8,6 @@ success_symbol = "[λ](bold green)"
 error_symbol =   "[λ](bold red)"
 #λ
 
-# Use custom format
-#format = """
-#[┌───────────────────>](bold green)
-#[│](bold green)$directory$rust$package
-#[└─>](bold green) """
 
 # Disable the package module, hiding it from the prompt completely
 #[package]

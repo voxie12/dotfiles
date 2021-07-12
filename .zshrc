@@ -9,7 +9,7 @@ yafetch
 [[ $- != *i* ]] && return
 
 autoload -U colors && colors
-export PROMPT='%F{yellow}%Bᗧ %F{white}... %F{red}%Bᗣ%b%f  '
+#export PROMPT='%F{yellow}%Bᗧ %F{white}... %F{red}%Bᗣ%b%f  '
 
 # u dont need to type "cd" anymore
 setopt auto_cd
@@ -101,6 +101,15 @@ alias x="xplr"
 alias xcd='cd "$(xplr)"'
 alias rm='echo "This is not the command you are looking for."; false'
 
+find() {
+	if [ $# = 1 ];
+	then
+		command find . -iname "*$@*"
+	else
+		command find "$@"
+	fi
+}
+
 
 # prompt
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"

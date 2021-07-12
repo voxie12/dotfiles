@@ -6,12 +6,11 @@ xsetroot -cursor_name left_ptr &
 #xset r rate 360 60 -b -dpms &
 xset r rate 350 60 &
 #feh --bg-max --randomize ~/Wallpapers/* &
-xwallpaper --maximize $HOME/pictures/wallpapers/wallhaven-l3zmwy.jpg
+xwallpaper --maximize $HOME/pictures/yuki/yuki3.png
 lxsession &
 $HOME/.config/polybar/launch.sh
 picom --experimental-backends &
 #nm-applet &
-dunst &
 unclutter -idle 2 &
 #redshift -O3500
 #xset s off &

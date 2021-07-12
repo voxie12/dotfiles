@@ -6,6 +6,7 @@
 use strict;
 use Term::ANSIColor;
 use Getopt::Long;
+use experimental 'smartmatch';
 
 my $length = 13;
 my $gap = 3;
@@ -28,31 +29,54 @@ my @colors = (
     'bright_blue', 'bright_magenta', 'bright_cyan', 'bright_white'
 );
 
+my @wm = (
+    'fluxbox', 'openbox', 'blackbox', 'xfwm4', 'metacity', 'kwin', 'twin', 'icewm',
+    'pekwm', 'flwm', 'flwm_topside', 'fvwm', 'dwm', 'awesome', 'wmaker', 'stumpwm',
+    'musca', 'xmonad', 'i3', 'ratpoison', 'scrotwm', 'spectrwm', 'wmfs', 'wmii',
+    'beryl', 'subtle', 'e16', 'enlightenment', 'sawfish', 'emerald', 'monsterwm',
+    'dminiwm', 'compiz', 'Finder','herbstluftwm', 'howm', 'notion', 'bspwm', '2bwm',
+    'echinus', 'swm', 'budgie-wm', 'dtwm', '9wm', 'chromeos-wm', 'deepin-wm', 'sway',
+    'mwm', 'instawm'
+);
+
 sub get_os {
-    my $os = `lsb_release -sd`;
+    my $os;
+    my $os_release_file = "/etc/os-release";
+    if (-f $os_release_file) {
+        open(FH, "<", $os_release_file);
+        while(<FH>) {
+            if ($_ =~ m/^NAME/) {
+                $os = $_;
+                $os =~ s/NAME=//;
+                last;
+            }
+        }
+    }
+    unless ($os) { $os = `lsb_release -sd 2>/dev/null` }
     # for gentoo
-    unless ($os) { $os = `[ -x "/etc/portage" ] && echo "Gentoo"` }
+    unless ($os) { $os = `[ -x "/etc/portage" ] && echo "Gentoo" 2>/dev/null` }
     # for BSD
-    unless ($os) { $os = `uname -s`; }
+    unless ($os) { $os = `uname -s 2>/dev/null` }
+    unless ($os) { $os = "Unknown" }
     for($os){
+        s/ Linux//i;
         s/"//g;
-        s/ .*//;
         chomp;
     }
     return $os;
 }
 
 sub get_de {
-    my $de = $ENV{XDG_CURRENT_DESKTOP};
-    unless ($de) { $de = $ENV{XDG_SESSION_DESKTOP} };
-    unless ($de) { $de = $ENV{DESKTOP_SESSION} };
-    unless ($de) { $de = "Unknown" };
+    my $de = $ENV{DESKTOP_SESSION};
+    unless ($de) { $de = $ENV{XDG_SESSION_DESKTOP} }
+    unless ($de) { $de = $ENV{XDG_CURRENT_DESKTOP} }
+    unless ($de) { $de = "Unknown" }
     return $de;
 }
 
 sub shell {
     my $sh = (split '/', $ENV{SHELL})[-1];
-    unless ($sh) { $sh = "Unknown" };
+    unless ($sh) { $sh = "Unknown" }
     return $sh;
 }
 
@@ -60,24 +84,28 @@ sub kernel {
     my $ke = `uname -r`;
     $ke =~ s/-.*//;
     chomp $ke;
-    unless ($ke) { $ke = "Unknown" };
+    unless ($ke) { $ke = "Unknown" }
     return $ke;
 }
 
 sub packages {
     # for arch based
-    my $pacs = `pacman -Q`;
+    my $pacs = `pacman -Q 2>/dev/null`;
     # for debian based
-    unless ($pacs) { $pacs = `dpkg-query -f '\n' -W` }
+    unless ($pacs) { $pacs = `dpkg-query -l | grep "^ii"` }
     # for fedora
-    unless ($pacs) { $pacs = `yum list installed` }
+    unless ($pacs) { $pacs = `yum list installed 2>/dev/null` }
     # for BSD
-    unless ($pacs) { $pacs = `pkg info` }
+    unless ($pacs) { $pacs = `pkg info 2>/dev/null` }
     # for gentoo based
-    unless ($pacs) { $pacs = `[ -x "/var/db/pkg/" ] && ls -d /var/db/pkg/*/*` }
+    unless ($pacs) { $pacs = `ls -d /var/db/pkg/*/* 2>/dev/null` }
+    # for venon linux
+    unless ($pacs) { $pacs = `ls -d /var/lib/scratchpkg/db/* 2>/dev/null` }
+    # for solus
+    unless ($pacs) { $pacs = `eopkg list-installed 2>/dev/null` }
 
     my $count = $pacs =~ tr/\n//;
-    unless ($count) { $count = "Unknown" };
+    unless ($count) { $count = "Unknown" }
     return $count;
 }
 
@@ -111,7 +139,8 @@ sub usage {
     my $today;
     foreach my $line (split '\n', $data) {
         if ($line =~ /today/) {
-            $today = (split '\|', $line)[2];
+            $line =~ s/\|/\//g; # newer vnstat uses | as separator
+            $today = (split '/', $line)[2];
             $today =~ s/^ *//;
         }
     }
@@ -170,6 +199,10 @@ sub get_info {
         $de_placeholder = 'WM';
     }
 
+    if ($de ~~ @wm) {
+        $de_placeholder = 'WM';
+    }
+
     if ($vnstat eq '') {
         $vnstat = usage();
     }
@@ -215,7 +248,7 @@ sub get_info {
     );
 
     my %pac = (
-        'placeholder' => 'PACKAGE',
+        'placeholder' => 'PACKAGES',
         'color' => 'cyan',
         'name' => $pac,
     );
@@ -339,7 +372,7 @@ sub main {
         $text .= colored(q{    დოოოოოდ    }, $color) . $info_lines[$i++];
         $text .= colored(q{    |     |    }, $color) . $info_lines[$i++];
         $text .= colored(q{    |     |   ╭}, $color) . $info_lines[$i++];
-        $text .= colored(q{    |-ᱛ ᱛ-|   │}, $color) . $info_lines[$i++];
+        $text .= colored(q{    |-Ο Ο-|   │}, $color) . $info_lines[$i++];
         $text .= colored(q{   Ͼ   ∪   Ͽ  │}, $color) . $info_lines[$i++];
         $text .= colored(q{    |     |   ╯}, $color) . $info_lines[$i++];
         $text .= colored(q{   ˏ`-.ŏ.-´ˎ   }, $color) . $info_lines[$i++];
