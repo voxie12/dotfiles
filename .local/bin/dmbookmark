@@ -119,7 +119,11 @@ declare -a options=(
 "kitsu - https://kitsu.io/"
 "shanaproject - http://alt.shanaproject.com/"
 "debian - https://www.debian.org/"
+"gentoo - https://www.gentoo.org/"
 "suckless - https://www.suckless.org/"
+"oneplus - https://www.oneplus.com/"
+"font awesome - https://fontawesome.com/"
+"nerd fonts - https://www.nerdfonts.com/" 
 
 "quit"
 )

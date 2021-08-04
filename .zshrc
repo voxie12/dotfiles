@@ -100,16 +100,10 @@ alias pacdate="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
 alias x="xplr"
 alias xcd='cd "$(xplr)"'
 alias rm='echo "This is not the command you are looking for."; false'
-
-find() {
-	if [ $# = 1 ];
-	then
-		command find . -iname "*$@*"
-	else
-		command find "$@"
-	fi
-}
-
+alias fd='fd --hidden --no-ignore'
+alias gd='git diff'
+alias gs='git status'
+alias gc='git clone'
 
 # prompt
 eval "$(starship init zsh)"
