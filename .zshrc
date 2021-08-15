@@ -3,7 +3,8 @@
 #fm6000 -r -o arch -n -de bspwm -c random
 #bunnyfetch
 #jfetch
-yafetch
+#yafetch
+fet
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -104,6 +105,7 @@ alias fd='fd --hidden --no-ignore'
 alias gd='git diff'
 alias gs='git status'
 alias gc='git clone'
+alias wget='wget -c'
 
 # prompt
 eval "$(starship init zsh)"

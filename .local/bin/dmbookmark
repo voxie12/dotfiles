@@ -123,7 +123,8 @@ declare -a options=(
 "suckless - https://www.suckless.org/"
 "oneplus - https://www.oneplus.com/"
 "font awesome - https://fontawesome.com/"
-"nerd fonts - https://www.nerdfonts.com/" 
+"nerd fonts - https://www.nerdfonts.com/"
+"whatsapp - https://web.whatsapp.com/"
 
 "quit"
 )
