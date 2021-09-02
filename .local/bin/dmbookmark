@@ -125,6 +125,8 @@ declare -a options=(
 "font awesome - https://fontawesome.com/"
 "nerd fonts - https://www.nerdfonts.com/"
 "whatsapp - https://web.whatsapp.com/"
+"bitwarden - https://vault.bitwarden.com/"
+"mechgroupbuys https://www.mechgroupbuys.com/"
 
 "quit"
 )
