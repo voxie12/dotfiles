@@ -64,7 +64,7 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias df='df -h'
-alias free='free -mt'
+alias free='free -mth'
 alias merge='xrdb -merge ~/.Xresources'
 alias jctl="journalctl -p 3 -xb"
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
