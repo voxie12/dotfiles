@@ -92,7 +92,6 @@ alias emacs="emacsclient -c -a 'emacs'"
 alias rain='curl v2d.wttr.in/London'
 alias thisatsu='mpv https://www.twitch.tv/thisatsu3'
 alias fuckssh='rm -rf ~/.ssh'
-alias porn='mpv https://pornhub.com/random'
 alias fdisk='sudo fdisk -l'
 alias big="expac -H M '%m\t%n' | sort -h | nl"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
@@ -106,11 +105,12 @@ alias gd='git diff'
 alias gs='git status'
 alias gc='git clone'
 alias wget='wget -c'
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist-arch"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist-arch"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist-arch"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist-arch"
-alias mirrorx='sudo reflector --age 6 --latest 20 --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist-arch'
+#alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist-arch"
+alias mirror="doas reflector --verbose -c GB --sort rate --latest 10 --save /etc/pacman.d/mirrorlist-arch"
+alias mirrord="doas reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist-arch"
+alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist-arch"
+alias mirrora="doas reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist-arch"
+alias mirrorx='doas reflector --age 6 --latest 20 --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist-arch'
 
 # prompt
 eval "$(starship init zsh)"

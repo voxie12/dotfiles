@@ -127,6 +127,7 @@ declare -a options=(
 "whatsapp - https://web.whatsapp.com/"
 "bitwarden - https://vault.bitwarden.com/"
 "mechgroupbuys https://www.mechgroupbuys.com/"
+"yahoo https://mail.yahoo.com/"
 
 "quit"
 )
