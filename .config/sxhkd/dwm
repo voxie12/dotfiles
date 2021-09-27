@@ -7,3 +7,6 @@ XF86AudioLowerVolume
 
 XF86AudioPlay
   pamixer -t
+
+XF86AudioMute
+  pamixer -t

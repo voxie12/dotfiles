@@ -47,7 +47,8 @@ bindkey '^R' history-incremental-pattern-search-backward
 source ~/git/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 # alias
-alias sudo="doas --"
+alias sudo="doas"
+alias sudoedit='doas rnano'
 alias vim="nvim"
 alias v="nvim"
 alias ls='exa --icons --group-directories-first'
@@ -90,7 +91,7 @@ alias sx='startx'
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 alias rain='curl v2d.wttr.in/London'
-alias thisatsu='mpv https://www.twitch.tv/thisatsu3'
+alias thisatsu='mpv https://www.twitch.tv/thisatsu_'
 alias fuckssh='rm -rf ~/.ssh'
 alias fdisk='sudo fdisk -l'
 alias big="expac -H M '%m\t%n' | sort -h | nl"
@@ -111,6 +112,7 @@ alias mirrord="doas reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist-arch"
 alias mirrora="doas reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist-arch"
 alias mirrorx='doas reflector --age 6 --latest 20 --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist-arch'
+alias p='paru'
 
 # prompt
 eval "$(starship init zsh)"
