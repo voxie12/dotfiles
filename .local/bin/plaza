@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mpv 'https://radio.plaza.one/mp3' | while read -r mpvline
+do
+  case "$mpvline" in
+    icy-title:*)
+      notify-send "Now playing: ${mpvline#icy-title: }"
+    ;;
+  esac
+done

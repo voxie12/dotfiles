@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mpv 'https://play.streamafrica.net/lofiradio' | while read -r mpvline
+do
+  case "$mpvline" in
+    icy-title:*)
+      notify-send "Now playing: ${mpvline#icy-title: }"
+    ;;
+  esac
+done
